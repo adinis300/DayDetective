@@ -1,0 +1,20 @@
+REPLACE THIS FILE with:
+
+  icon.png       — 512×512 PNG, your app icon
+  presplash.png  — 1080×1920 PNG, shown while app loads
+
+Free icon ideas:
+  https://icons8.com/icons/set/calendar
+  https://www.flaticon.com  (search "detective calendar")
+
+The app will crash on build if these files are missing.
+You can generate a quick placeholder with:
+  python -c "
+from PIL import Image, ImageDraw
+img = Image.new('RGB', (512,512), color=(8,9,16))
+d = ImageDraw.Draw(img)
+d.ellipse([100,100,412,412], fill=(108,99,255))
+img.save('assets/icon.png')
+img2 = Image.new('RGB', (1080,1920), color=(8,9,16))
+img2.save('assets/presplash.png')
+"
